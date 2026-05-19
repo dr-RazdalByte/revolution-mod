@@ -6,3 +6,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/modules.xml
+/inspectionProfiles/profiles_settings.xml
+/revolution-mod.iml
+/vcs.xml
