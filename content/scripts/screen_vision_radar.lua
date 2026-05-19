@@ -24,8 +24,8 @@ function begin()
     begin_load()
 end
 
-g_show_vectors = false
-g_show_ids = false
+g_show_vectors = true
+g_show_ids = true
 
 function update(screen_w, screen_h, ticks) 
     g_animation_time = g_animation_time + ticks

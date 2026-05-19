@@ -143,13 +143,13 @@
 	</buoyancys>
 	<vehicle_attachments/>
 	<lights>
-		<light name="light_port" body_index="0" scale="4.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="light_port" body_index="0" scale="1.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="1.00000000e+00" m12="0.00000000e+00" m20="0.00000000e+00" m21="0.00000000e+00" m22="1.00000000e+00" tx="-1.15536833e+00" ty="-1.34765565e-01" tz="5.41039884e-01"/>
 			<color x="1.00000000e+00" y="4.00000006e-01" z="4.00000006e-01"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 			<bounds_max x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 		</light>
-		<light name="light_star" body_index="0" scale="4.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="light_star" body_index="0" scale="1.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="1.00000000e+00" m12="0.00000000e+00" m20="0.00000000e+00" m21="0.00000000e+00" m22="1.00000000e+00" tx="1.15499997e+00" ty="-1.35000005e-01" tz="5.41000009e-01"/>
 			<color x="4.00000006e-01" y="1.00000000e+00" z="4.00000006e-01"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
