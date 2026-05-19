@@ -3092,7 +3092,7 @@ local st, _v = pcall(function()
                 -- comment/remove a line to remove that attachment
                 {
                     { i = 1, x = 0, y = -23 }, -- front camera slot
-                    { i = 2, x = 9, y = -4 }  -- internal gun
+                    { i = 2, x = 9, y = -4 }   -- internal gun
                 },
                 {
                     { i = 3, x = 0, y = 7 },   -- centre
@@ -3110,6 +3110,12 @@ local st, _v = pcall(function()
                     e_game_object_type.attachment_camera_plane,
                     e_game_object_type.attachment_turret_gimbal_30mm,
                 },
+
+                -- internal gun
+                [2] = {
+                    e_game_object_type.attachment_turret_plane_chaingun
+                },
+
                 -- middle
                 [3] = {
                     e_game_object_type.attachment_fuel_tank_plane,
@@ -3118,6 +3124,7 @@ local st, _v = pcall(function()
                     e_game_object_type.attachment_hardpoint_bomb_3,
                     e_game_object_type.attachment_hardpoint_torpedo,
                 },
+
                 -- wings
                 [4] = _std_wing_attachments,
                 [5] = _std_wing_attachments,
@@ -3125,11 +3132,6 @@ local st, _v = pcall(function()
                 -- utils
                 [6] = _std_wing_utils,
                 [7] = _std_wing_utils,
-
-                -- internal gun
-                [2] = {
-                    e_game_object_type.attachment_turret_plane_chaingun
-                }
             }
         },
         -- albatross
@@ -3140,12 +3142,12 @@ local st, _v = pcall(function()
                 },
                 {
                     { i=2, x=-22, y=-4 }, -- left middle
-                    { i=3, x=22, y=-4 },  -- right middle
-                    { i=4, x=-13, y=-4 }, -- left inner
-                    { i=5, x=13, y=-4 },  -- right inner
+                    { i=3, x=-13, y=-4 }, -- left inner
+                    { i=4, x=13, y=-4 },  -- right inner
+                    { i=5, x=22, y=-4 },  -- right middle
                     { i=6, x=0, y=0 },    -- AWACS
                 }
-            } ,
+            },
             options = {
                 -- nose slot
                 [1] = {
@@ -3167,11 +3169,11 @@ local st, _v = pcall(function()
         [e_game_object_type.chassis_air_rotor_light] = {
             rows = {
                 {
-                    { i=5, x=0, y=-15 },
                     { i=1, x=-16, y=-5 },
+                    { i=2, x=16, y=-5 },
                     { i=3, x=-16, y=12 },
                     { i=4, x=16, y=12 },
-                    { i=2, x=16, y=-5 },
+                    { i=5, x=0, y=-15 }
                     -- { i=6, x=0, y=4 },
                 }
             },
@@ -3190,7 +3192,7 @@ local st, _v = pcall(function()
         -- seal
         [e_game_object_type.chassis_land_wheel_light] = {
             options = {
-                [1] = concat_lists(_std_land_turrets, {e_game_object_type.attachment_turret_15mm}),
+                [1] = concat_lists(_std_land_turrets, {e_game_object_type.attachment_turret_15mm, e_game_object_type.attachment_turret_droid}),
             }
         },
         -- walrus
@@ -3215,6 +3217,14 @@ local st, _v = pcall(function()
         -- bear
         [e_game_object_type.chassis_land_wheel_heavy] = {
             options = {
+                [2] = {
+                    e_game_object_type.attachment_turret_battle_cannon,
+                    e_game_object_type.attachment_turret_heavy_cannon,
+                    e_game_object_type.attachment_turret_artillery,
+                    e_game_object_type.attachment_turret_40mm,
+                    e_game_object_type.attachment_turret_ciws,
+                    e_game_object_type.attachment_turret_missile
+                },
                 [4] = {
                     e_game_object_type.attachment_hardpoint_missile_aa,
                     e_game_object_type.attachment_hardpoint_missile_tv,
@@ -3239,25 +3249,30 @@ local st, _v = pcall(function()
         --    options = {
         --        -- nose slot
         --        [1] = {
-        --            e_game_object_type.attachment_camera_plane,
-        --            e_game_object_type.attachment_turret_gimbal_30mm,
+        --            e_game_object_type.attachment_camera_observation,
+        --            e_game_object_type.attachment_turret_30mm,
+        --            e_game_object_type.attachment_turret_40mm,
+        --            e_game_object_type.attachment_deployable_droid,
+        --            e_game_object_type.attachment_turret_heavy_cannon,
+        --            e_game_object_type.attachment_turret_missile,
+        --            e_game_object_type.attachment_turret_robot_dog_capsule
         --        },
         --    },
-        --    rows = {
-        --        {
-        --            { i=1, x=0, y=-22 }
-        --        },
-        --        {
-        --            { i=2, x=-23, y=0 },
-        --            { i=4, x=-14, y=0 },
-        --            { i=5, x=14, y=0 },
-        --            { i=3, x=23, y=0 }
-        --        },
-        --        {
-        --        --    { i=7, x=0, y=10},
-        --            { i=8, x=0, y=23}
-        --        }
-        --    }
+        --    --rows = {
+        --    --    {
+        --    --        { i=1, x=0, y=-22 }
+        --    --    },
+        --    --    {
+        --    --        { i=2, x=-23, y=0 },
+        --    --        { i=4, x=-14, y=0 },
+        --    --        { i=5, x=14, y=0 },
+        --    --        { i=3, x=23, y=0 }
+        --    --    },
+        --    --    {
+        --    --    --    { i=7, x=0, y=10},
+        --    --        { i=8, x=0, y=23}
+        --    --    }
+        --    --}
         --},
         -- turret
         [e_game_object_type.chassis_land_turret] = {
@@ -3573,31 +3588,6 @@ function rev_set_vehicle_waypoint_altitudes(vehicle, altitdue)
                 vehicle:set_waypoint_altitude(w:get_id(), altitdue)
             end
         end
-    end
-end
-
-function rev_create_orbit_route(vehicle, start_pos, kind, radius)
-    local middle = start_pos
-    local ne = vec2(middle:x() + radius, middle:y() - radius)
-    local se = vec2(middle:x() + radius, middle:y() + radius)
-    local nw = vec2(middle:x() - radius, middle:y() - radius)
-    local sw = vec2(middle:x() - radius, middle:y() + radius)
-    vehicle:clear_waypoints()
-    vehicle:clear_attack_target()
-
-    if kind == "racetrack" then
-        local c = vehicle:add_waypoint(middle:x(), middle:y())
-        vehicle:add_waypoint(ne:x(), ne:y())
-        vehicle:add_waypoint(se:x(), se:y())
-        vehicle:add_waypoint(nw:x(), nw:y())
-        local l = vehicle:add_waypoint(sw:x(), sw:y())
-        vehicle:set_waypoint_repeat(l, c)
-    elseif kind == "orbit" then
-        local c = vehicle:add_waypoint(ne:x(), ne:y())
-        vehicle:add_waypoint(se:x(), se:y())
-        vehicle:add_waypoint(sw:x(), sw:y())
-        local l = vehicle:add_waypoint(nw:x(), nw:y())
-        vehicle:set_waypoint_repeat(l, c)
     end
 end
 

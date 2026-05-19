@@ -2918,10 +2918,10 @@ function get_ui_vehicle_chassis_attachments(vehicle)
             },
             {
                 { i=2, x=-26, y=0 },
-                { i=4, x=-14, y=0 },
-                { i=6, x=0, y=1 },
-                { i=5, x=14, y=0 },
-                { i=3, x=26, y=0 }
+                { i=3, x=-14, y=0 },
+                { i=4, x=14, y=0 },
+                { i=5, x=26, y=0 },
+                { i=6, x=0, y=1 }
             }
         }
 
@@ -2946,9 +2946,9 @@ function get_ui_vehicle_chassis_attachments(vehicle)
         vehicle_attachment_rows = {
             {
                 { i=1, x=-26, y=0 },
+                { i=2, x=26, y=0 },
                 { i=3, x=-14, y=0 },
                 { i=4, x=14, y=0 },
-                { i=2, x=26, y=0 }
             }
         }
     elseif vehicle_definition_index == e_game_object_type.chassis_air_rotor_heavy then
@@ -2958,9 +2958,9 @@ function get_ui_vehicle_chassis_attachments(vehicle)
             },
             {
                 { i=2, x=-20, y=0 },
-                { i=4, x=-10, y=0 },
-                { i=5, x=10, y=0 },
-                { i=3, x=20, y=0 }
+                { i=3, x=-10, y=0 },
+                { i=4, x=10, y=0 },
+                { i=5, x=20, y=0 }
             }
         }
     elseif vehicle_definition_index == e_game_object_type.chassis_land_turret then

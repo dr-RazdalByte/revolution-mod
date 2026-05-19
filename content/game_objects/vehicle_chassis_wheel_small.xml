@@ -81,16 +81,16 @@
 		</mesh>
 	</meshes>
 	<wheels>
-		<wheel steerable="true" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_front_left" acceleration="4.00000006e-01">
+		<wheel steerable="true" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_front_left" acceleration="6.00000006e-01">
 			<pos x="-1.00000000e+00" y="-4.49999988e-01" z="1.45000005e+00"/>
 		</wheel>
-		<wheel steerable="false" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_back_left" acceleration="4.00000006e-01">
+		<wheel steerable="false" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_back_left" acceleration="6.00000006e-01">
 			<pos x="-1.00000000e+00" y="-4.49999988e-01" z="-1.35000002e+00"/>
 		</wheel>
-		<wheel steerable="true" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_front_right" acceleration="4.00000006e-01">
+		<wheel steerable="true" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_front_right" acceleration="6.00000006e-01">
 			<pos x="1.00000000e+00" y="-4.49999988e-01" z="1.45000005e+00"/>
 		</wheel>
-		<wheel steerable="false" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_back_right" acceleration="4.00000006e-01">
+		<wheel steerable="false" stiffness="2.00000000e+01" damping="2.00000000e+02" suspension_length="5.00000000e-01" relax_rate="5.00000007e-02" grip="1.00000000e+02" radius="4.49999988e-01" name="wheel_back_right" acceleration="6.00000006e-01">
 			<pos x="1.00000000e+00" y="-4.49999988e-01" z="-1.35000002e+00"/>
 		</wheel>
 	</wheels>
@@ -142,25 +142,25 @@
 	</buoyancys>
 	<vehicle_attachments/>
 	<lights>
-		<light name="front_spot_right" body_index="0" scale="2.00000000e+01" is_spotlight="true" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="front_spot_right" body_index="0" scale="4.00000000e+00" is_spotlight="true" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="9.88194644e-01" m12="1.53203607e-01" m20="0.00000000e+00" m21="-1.53203607e-01" m22="9.88194644e-01" tx="6.07188761e-01" ty="2.46739283e-01" tz="1.82893705e+00"/>
 			<color x="1.00000000e+00" y="1.00000000e+00" z="1.00000000e+00"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 			<bounds_max x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 		</light>
-		<light name="front_spot_left" body_index="0" scale="2.00000000e+01" is_spotlight="true" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="front_spot_left" body_index="0" scale="4.00000000e+00" is_spotlight="true" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="9.88194644e-01" m12="1.53203607e-01" m20="0.00000000e+00" m21="-1.53203607e-01" m22="9.88194644e-01" tx="-5.67124367e-01" ty="2.53804743e-01" tz="1.82912171e+00"/>
 			<color x="1.00000000e+00" y="1.00000000e+00" z="1.00000000e+00"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 			<bounds_max x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 		</light>
-		<light name="front_omni_right" body_index="0" scale="1.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="front_omni_right" body_index="0" scale="3.00000012e-01" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="9.88194644e-01" m12="1.53203607e-01" m20="0.00000000e+00" m21="-1.53203607e-01" m22="9.88194644e-01" tx="6.07188761e-01" ty="2.44739890e-01" tz="1.81014550e+00"/>
 			<color x="1.00000000e+00" y="1.00000000e+00" z="1.00000000e+00"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 			<bounds_max x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
 		</light>
-		<light name="front_omni_left" body_index="0" scale="1.00000000e+00" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
+		<light name="front_omni_left" body_index="0" scale="3.00000012e-01" is_spotlight="false" is_bounds="false" is_volume="true" fov="7.85398185e-01">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="9.88194644e-01" m12="1.53203607e-01" m20="0.00000000e+00" m21="-1.53203607e-01" m22="9.88194644e-01" tx="-6.07188761e-01" ty="2.44739890e-01" tz="1.81014550e+00"/>
 			<color x="1.00000000e+00" y="1.00000000e+00" z="1.00000000e+00"/>
 			<bounds_min x="0.00000000e+00" y="0.00000000e+00" z="0.00000000e+00"/>
