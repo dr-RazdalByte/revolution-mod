@@ -1108,21 +1108,6 @@ function render_selection_waypoint(screen_w, screen_h)
                             g_is_ignore_tap = 1
                         end
                     end
-
-                    if ui:list_item("RACE TRACK HERE", true) then
-                        rev_create_orbit_route(selected_vehicle, selected_waypoint:get_position_xz(selected_waypoint:get_id()), "racetrack", 3500)
-                        rev_set_vehicle_waypoint_altitudes(selected_vehicle, 1200)
-                        g_selection:clear()
-                        g_is_ignore_tap = 1
-                    end
-
-                    if ui:list_item("ORBIT HERE", true) then
-                        rev_create_orbit_route(selected_vehicle, selected_waypoint:get_position_xz(selected_waypoint:get_id()), "orbit", 3500)
-                        rev_set_vehicle_waypoint_altitudes(selected_vehicle, 1200)
-                        g_selection:clear()
-                        g_is_ignore_tap = 1
-                    end
-
                 end
             ui:end_window()
         else
@@ -1208,7 +1193,7 @@ end
 
 function render_selection_map(screen_w, screen_h)
     update_ui_rectangle(0, 0, 256, 256, color8(0, 0, 0, 128))
-    local screen_team = update_get_screen_team_id()
+
     local ui = g_ui
 
     update_add_ui_interaction_special(update_get_loc(e_loc.interaction_navigate), e_ui_interaction_special.gamepad_dpad_ud)
@@ -1225,37 +1210,6 @@ function render_selection_map(screen_w, screen_h)
         window.label_bias = 0.8
 
         ui:header(update_get_loc(e_loc.upp_actions))
-
-        -- markers
-        for mi = 1, 4, 1 do
-            local mname = get_marker_name(mi)
-            if get_marker_waypoint(screen_team, mi) == nil then
-                add_marker_waypoint(screen_team, mi)
-            end
-            local clicked = false
-            local value = get_marker_value(screen_team, mi)
-            if is_waypoint_value_enabled(value) then
-                if ui:list_item(string.format("Remove Marker %s", mname), true) then
-                    unset_marker_waypoint(screen_team, mi)
-                    g_setting_marker_control_screen = nil
-                    clicked = true
-                end
-            else
-                if ui:list_item(string.format("Set Marker %s", mname), true) then
-                    g_setting_marker_control_screen = mi
-                    clicked = true
-                end
-            end
-
-            if clicked then
-                rev_set_notification("SET MARKER POINT")
-                g_is_ignore_tap = 1
-                g_screen_index = 0
-                g_command_center_ui.selected_panel = 0
-                g_selection:clear()
-                return
-            end
-        end
 
         if g_dev_options then
 
@@ -2113,7 +2067,7 @@ function _update(screen_w, screen_h, ticks)
                                     if waypoint_type == e_waypoint_type.move or waypoint_type == e_waypoint_type.deploy then
                                         local waypoint_pos = waypoint:get_position_xz(j)
                                         local waypoint_screen_pos_x, waypoint_screen_pos_y = get_screen_from_world(waypoint_pos:x(), waypoint_pos:y(), g_camera_pos_x, g_camera_pos_y, g_camera_size, screen_w, screen_h)
-                                        local waypoint_distance_to_cursor = math_abs(waypoint_screen_pos_x - g_cursor_pos_x) + math_abs(waypoint_screen_pos_y - g_cursor_pos_y)
+                                        local waypoint_distance_to_cursor = math.abs(waypoint_screen_pos_x - g_cursor_pos_x) + math.abs(waypoint_screen_pos_y - g_cursor_pos_y)
 
                                         if waypoint_distance_to_cursor < highlighted_distance_best and waypoint_distance_to_cursor < 8 then
                                             g_highlighted:set_vehicle_waypoint(vehicle:get_id(), waypoint:get_id())
@@ -4155,7 +4109,6 @@ function input_event(event, action)
                         update_set_screen_state_exit()
                     end
                 end
-
             else
                 -- release
 
@@ -4163,22 +4116,6 @@ function input_event(event, action)
 
                     if event == e_input.pointer_1 then
                         g_is_drag_pan_map = false
-                    end
-
-                    if not g_is_ignore_tap and g_setting_marker_control_screen ~= nil then
-                        -- place a marker
-                        local world_x, world_y = get_world_from_screen(g_cursor_pos_x, g_cursor_pos_y, g_camera_pos_x, g_camera_pos_y, g_camera_size, g_screen_w, g_screen_h)
-                        local screen_team = update_get_screen_team_id()
-                        local marker = get_marker_waypoint(screen_team, g_setting_marker_control_screen)
-
-                        g_command_center_ui.selected_panel = 0
-                        g_selection:clear()
-
-                        if marker ~= nil then
-                            set_marker_waypoint(screen_team, g_setting_marker_control_screen, world_x, world_y)
-                        end
-                        g_setting_marker_control_screen = nil
-                        return
                     end
 
                     if g_is_ignore_tap then

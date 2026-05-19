@@ -3249,30 +3249,25 @@ local st, _v = pcall(function()
         --    options = {
         --        -- nose slot
         --        [1] = {
-        --            e_game_object_type.attachment_camera_observation,
-        --            e_game_object_type.attachment_turret_30mm,
-        --            e_game_object_type.attachment_turret_40mm,
-        --            e_game_object_type.attachment_deployable_droid,
-        --            e_game_object_type.attachment_turret_heavy_cannon,
-        --            e_game_object_type.attachment_turret_missile,
-        --            e_game_object_type.attachment_turret_robot_dog_capsule
+        --            e_game_object_type.attachment_camera_plane,
+        --            e_game_object_type.attachment_turret_gimbal_30mm,
         --        },
         --    },
-        --    --rows = {
-        --    --    {
-        --    --        { i=1, x=0, y=-22 }
-        --    --    },
-        --    --    {
-        --    --        { i=2, x=-23, y=0 },
-        --    --        { i=4, x=-14, y=0 },
-        --    --        { i=5, x=14, y=0 },
-        --    --        { i=3, x=23, y=0 }
-        --    --    },
-        --    --    {
-        --    --    --    { i=7, x=0, y=10},
-        --    --        { i=8, x=0, y=23}
-        --    --    }
-        --    --}
+        --    rows = {
+        --        {
+        --            { i=1, x=0, y=-22 }
+        --        },
+        --        {
+        --            { i=2, x=-23, y=0 },
+        --            { i=4, x=-14, y=0 },
+        --            { i=5, x=14, y=0 },
+        --            { i=3, x=23, y=0 }
+        --        },
+        --        {
+        --        --    { i=7, x=0, y=10},
+        --            { i=8, x=0, y=23}
+        --        }
+        --    }
         --},
         -- turret
         [e_game_object_type.chassis_land_turret] = {
