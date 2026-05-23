@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data name="Ground reballance" author="dr.RazdalByte" description="
-Changes vehicle fights to who first sees - wins.
+<data name="Use those vehicles" author="dr.RazdalByte" description="
+Based on Rev:1.6
 
-Vehicles now explode from few shots.
+Changes vehicle fight tactic to who first sees - wins.
+Hide around corners, dig in, set ambushes, shot at long distances.
+2 operators can focus fire entire convoy.
+Vehicles are fast in water and turrets can fight ships.
+
+Suggestions on how to play:
+-If you're flying, don't do it low, slow, or both, it's dangerous for your well-being.
+-If you're driving, being out of cover, in open, alone, or both, is dangerous for your well-being.
+-2x30mm can outgun entire convoy from cover or corner.
+-Engagements are lightning quick so spin the tower 360.
+-Fight two islands at a time, ground, air, or combine.
+-MULs are backbone for long range operations.
 ">
 
 </data>

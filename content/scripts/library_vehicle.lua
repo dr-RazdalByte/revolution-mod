@@ -3210,8 +3210,8 @@ local st, _v = pcall(function()
                 [1] = concat_lists(_std_land_turrets, {e_game_object_type.attachment_turret_heavy_cannon}),
                 [2] = _std_land_utils,
                 [3] = concat_lists(_std_land_utils, {e_game_object_type.attachment_deployable_droid}),
-                [4] = {e_game_object_type.attachment_hardpoint_missile_aa},
-                [5] = {e_game_object_type.attachment_hardpoint_missile_aa},
+                [4] = {e_game_object_type.attachment_hardpoint_missile_aa, e_game_object_type.attachment_hardpoint_missile_ir},
+                [5] = {e_game_object_type.attachment_hardpoint_missile_aa, e_game_object_type.attachment_hardpoint_missile_ir},
             },
         },
         -- bear
@@ -3228,10 +3228,12 @@ local st, _v = pcall(function()
                 [4] = {
                     e_game_object_type.attachment_hardpoint_missile_aa,
                     e_game_object_type.attachment_hardpoint_missile_tv,
+                    e_game_object_type.attachment_hardpoint_missile_ir
                 },
                 [5] = {
                     e_game_object_type.attachment_hardpoint_missile_aa,
                     e_game_object_type.attachment_hardpoint_missile_tv,
+                    e_game_object_type.attachment_hardpoint_missile_ir
                 }
             },
             rows = {
