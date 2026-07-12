@@ -40,7 +40,7 @@
 	<force_emitters/>
 	<control_surfaces/>
 	<projectile_emitters>
-		<projectile_emitter name="muzzle" fov="8.00000000e-03">
+		<projectile_emitter name="muzzle" fov="7.00000000e-03">
 			<transform m00="1.00000000e+00" m01="0.00000000e+00" m02="0.00000000e+00" m10="0.00000000e+00" m11="1.00000000e+00" m12="0.00000000e+00" m20="0.00000000e+00" m21="0.00000000e+00" m22="1.00000000e+00" tx="4.63483259e-02" ty="4.38477963e-01" tz="1.11475706e+00"/>
 		</projectile_emitter>
 	</projectile_emitters>

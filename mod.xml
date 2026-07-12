@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data name="Use those vehicles" author="dr.RazdalByte" description="
-Based on Rev:1.6
+<data name="Playable vehicles" author="dr.RazdalByte" description="
+Based on Rev:1.6-10
 
-Changes vehicle fight tactic to who first sees - wins.
+Changes vehicle fight tactics to who first sees - wins.
+Don't try to tank damage.
 Hide around corners, dig in, set ambushes, shot at long distances.
 2 operators can focus fire entire convoy.
-Vehicles are fast in water and turrets can fight ships.
+Vehicles are fast on water and turrets can fight ships.
 
 Suggestions on how to play:
 -If you're flying, don't do it low, slow, or both, it's dangerous for your well-being.
 -If you're driving, being out of cover, in open, alone, or both, is dangerous for your well-being.
--2x30mm can outgun entire convoy from cover or corner.
--Engagements are lightning quick so spin the tower 360.
+-2x30mm operators can outgun entire convoy from cover or corner.
+-Combats are lightning quick so spin the turret 360.
 -Fight two islands at a time, ground, air, or combine.
 -MULs are backbone for long range operations.
 -15mm turret is super accurate at 1000m+, 30mm mid ranges, 40mm mid-close
+-CIWS turret capable of fighting vehicles and ships
+-Vehicles repare and rearm faster
+-Gunbil RZR (autocannons) adjusted for fun close combat, RZR can take lots of hits
+-MNT is a glass gun, relies on speed and maneuverability
+-Droid turret on a seal is powerful and easy-to-man AA weapon, ciws is hard to handle manual, but capable of destroying bombs and missiles
 ">
 
 </data>
