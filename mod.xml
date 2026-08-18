@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data name="Playable vehicles" author="dr.RazdalByte" description="
-Based on Rev:1.6-10
+Based on Rev:1.6-17
 
 Changes vehicle fight tactics to who first sees - wins.
 Don't try to tank damage.

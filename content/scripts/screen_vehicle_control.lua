@@ -581,7 +581,7 @@ function render_selection_vehicle(screen_w, screen_h, vehicle)
             local title = vehicle_definition_name .. string_format( " ID %.0f", vehicle:get_id() )
             local is_window_active = g_selected_vehicle_ui.confirm_self_destruct == false
 
-            ui:begin_window(title, 10, 10, left_w, left_top_h, atlas_icons.column_pending, is_window_active, 2)
+            ui:begin_window(title, 10, 10, left_w, left_top_h, atlas_icons.column_pending, false, 2)
                 ui:stat(update_get_loc(e_loc.hp), hitpoints .. "/" .. hitpoints_total, iff(damage_factor < 0.2, color_low, color_high))
 
                 if vehicle_definition_index == e_game_object_type.chassis_land_turret then
@@ -3610,6 +3610,11 @@ function _update(screen_w, screen_h, ticks)
 
             render_cursor_info(screen_w, screen_h, drag_start_pos)
             render_map_scale(screen_w, screen_h)
+            -- clock
+
+            update_ui_text(screen_w - 70, screen_h - 40,
+                    format_time(update_get_logic_tick() // 30)
+            , 60, 2, color_grey_dark, 0)
 
             local sample_x, sample_y = get_world_from_screen(g_cursor_pos_x, g_cursor_pos_y, g_camera_pos_x, g_camera_pos_y, g_camera_size, 256, 256)
 

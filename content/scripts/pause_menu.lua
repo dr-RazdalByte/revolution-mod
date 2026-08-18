@@ -253,7 +253,48 @@ function _update(screen_w, screen_h, delta_time)
     g_pointer_pos_y_prev = g_pointer_pos_y
 end
 
+last_autosave_time = 0
+autosave_works = true
+
+g_last_autosave_tick = 0
+function do_autosave()
+    local now = update_get_time_since_epoch()
+    local tick = update_get_logic_tick()
+    if tick > g_last_autosave_tick then
+        g_last_autosave_tick = tick
+        local do_save = false
+        local elapsed = now - last_autosave_time
+        if elapsed > 60 * 5 then
+            do_save = true
+
+            last_autosave_time = now
+            update_ui_event("save_game", 19, "autosave")
+        end
+        local when = update_string_from_epoch(last_autosave_time, "%H:%M:%S %d/%m/%Y")
+        update_ui_text(3, 8, "autosave enabled", 128, 0, color_white, 0)
+        update_ui_text(3, 25, when, 128, 0, color_white, 0)
+        update_ui_text(3, 45, string.format("%d sec ago", elapsed), 128, 0, color_white, 0)
+        if do_save then
+            print("# autosave completed " .. when)
+        end
+
+    end
+end
+
 function update(screen_w, screen_h, delta_time)
+
+    if update_get_screen_vehicle ~= nil then
+        -- true when this the pause script is attached to a vehicle
+        if autosave_works then
+            local st, err = pcall(do_autosave)
+            if not st then
+                print(err)
+                autosave_works = false
+            end
+        end
+        return
+    end
+
     local st, err = pcall(_update, screen_w, screen_h, delta_time)
     if not st then
         print(err)
